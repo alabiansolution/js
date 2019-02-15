@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>React</title>
+    <script type="text/javascript" src="https://fb.me/react-0.14.3.js"></script>
+    <script type="text/javascript" src="https://fb.me/react-dom-0.14.3.js"></script>
+  </head>
+  <body>
+    <div id="app">
+
+    </div>
+    <script type="text/javascript">
+      var ItemList = React.createClass({
+        render() {
+          return React.createElement("ul", null,[
+            React.createElement("li", null, "Item 1"),
+            React.createElement("li", null, `Item ${this.props.number}`),
+            React.createElement("li", null, "Item 3"),
+            React.createElement("li", null, "Item 4")
+          ]);
+        },
+      });
+
+      ReactDOM.render(React.createElement(ItemList, {number:2}, null), document.querySelector("#app"));
+    </script>
+  </body>
+</html>
